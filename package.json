@@ -1,27 +1,48 @@
 {
-  "name": "nextjs-starter-blog",
-  "version": "1.0.0",
+  "name": "ichaida-blog",
   "private": true,
-  "license": "MIT",
+  "sideEffects": false,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "preview": "next build && next start"
+    "build": "yarn run build:css && remix build",
+    "build:css": "tailwindcss -o ./app/tailwind.css",
+    "dev": "concurrently \"yarn dev:css\" \"remix dev\"",
+    "dev:css": "tailwindcss -o ./app/tailwind.css --watch",
+    "lint": "eslint .",
+    "typecheck": "tsc -b"
   },
   "dependencies": {
-    "@reflexjs/mdx": "^1.0.0",
-    "fuse.js": "^6.4.6",
-    "next": "^10.1.3",
-    "next-mdx": "^0.6.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "reflexjs": "^2.0.0"
+    "@balavishnuvj/remix-seo": "^1.0.2",
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/material": "^5.10.4",
+    "@remix-run/node": "^1.7.0",
+    "@remix-run/react": "^1.7.0",
+    "@remix-run/vercel": "^1.7.0",
+    "@vercel/node": "^2.4.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rehype-external-links": "^2.0.1",
+    "rehype-highlight": "^5.0.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9",
-    "@types/node": "^14.14.12",
-    "@types/react": "^17.0.0",
-    "reading-time": "^1.3.0",
-    "typescript": "^4.1.2"
+    "@remix-run/dev": "^1.7.0",
+    "@remix-run/eslint-config": "^1.7.0",
+    "@remix-run/serve": "^1.7.0",
+    "@tailwindcss/typography": "^0.5.7",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "concurrently": "^7.3.0",
+    "eslint": "^8.24.0",
+    "husky": "^8.0.1",
+    "prettier": "^2.7.1",
+    "pretty-quick": "^3.1.3",
+    "semantic-release": "^19.0.5",
+    "tailwindcss": "^3.1.8",
+    "typescript": "^4.8.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }
