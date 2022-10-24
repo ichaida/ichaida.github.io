@@ -10,7 +10,7 @@ export const siteMetadata = {
   github: "ichaida",
   linkedin: "ismail-chaida",
   email: "chaida.ismail@gmail.com",
-  professionalTitle: "Senior Backend Engineer @ HelloFresh",
+  professionalTitle: "Senior Backend Engineer @ HelloFresh SE",
   aboutMe:
     "I'm a Backend Engineer @ HelloFresh. More than 9 years of experience developing Software. International working experience, mainly in the Belgium, France and Germany Energy, Banking and Food sectors. Full-Stack Knowledge with a focus on Web/API development and Data Engineering. Interested in new Technologies, Big Data (DataOps, Distributed Processing), Cloud and Data Science (MLOps, Machine Learning, Deep Learning).",
   logo: "/images/logo.png",
